@@ -30,7 +30,9 @@ def train_model(x, y):
     x_train, _, y_train, _ = train_test_split(
         x, y, test_size=0.2, random_state=42,
     )
-    model = RandomForestRegressor(n_estimators=200, random_state=42)
+    model = RandomForestRegressor(
+        n_estimators=100, max_depth=12, random_state=42,
+    )
     model.fit(x_train, y_train)
     return model
 
